@@ -1,0 +1,41 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+<!------ Include the above in your HEAD tag ---------->
+<app-header-admin></app-header-admin>
+<div class="login-dark">
+  <div align="center">
+    <caption><h2><ins><i></i></ins></h2></caption>
+  </div>
+
+  <table style="width:75%;" align="center">
+
+    <tr>
+      <th colspan="4" style="background-color:#5E1D55;color:white;" width="100%"><h3>Lista Cursos</h3></th>
+    </tr>
+
+    <tr style="background-color:#32A9EE;color:white;">
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Creditos</th>
+      <th>Carrera</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><input type="text" id="codigo" placeholder="Codigo"></td>
+      <td><input type="text" id="nombre" placeholder="Nombre"></td>
+      <td><input type="text" id="creditos" placeholder="Creditos"></td>
+      <td><input type="text" id="carrera" placeholder="Carrera"></td>
+      <td><button type="button" (click)="agregar()" class="btn btn-sm btn-primary btn-create">Agregar</button></td>
+    </tr>
+    <tr *ngFor="let curso of cursos | slice:1">
+      <td><b>{{curso.codigo}}</b></td>
+      <td>{{curso.nombre}}</td>
+      <td>{{curso.creditos}}</td>
+      <td>{{curso.carrera}}</td>
+      <td><a class="btn btn-danger" (click)="eliminar(curso.codigo)"><em class="fa fa-trash"></em></a></td>
+    </tr>
+  </table>
+</div>
